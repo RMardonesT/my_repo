@@ -1,0 +1,21 @@
+name: my_action
+
+on: 
+  push: 
+    branches: [ main ]
+
+jobs: 
+  build: 
+    runs-on: self-hosted
+
+    steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
+          
+        - name: setup python
+          uses: actions/setup-python@v5
+          with:
+            python-version: '3.9' 
+            
+        - name: run script
+          run: python generate_new_fila.py
