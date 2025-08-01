@@ -12,10 +12,9 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
           
-        - name: setup python
-          uses: actions/setup-python@v5
+        - uses: actions/setup-python@v5
           with:
-            python-version: '3.9.2' 
-            
+            python-version: system
+
         - name: run script
           run: python generate_new_fila.py
